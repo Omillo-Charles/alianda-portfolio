@@ -69,7 +69,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-blue-200 shadow-lg">
         <div className="max-w-6xl mx-auto px-6 py-4">
@@ -218,48 +218,46 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6" data-aos="fade-right">
+      <section id="about" className="py-16 px-3 sm:px-4 md:px-6" data-aos="fade-right">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16" data-aos="fade-in">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">About Me</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">About Me</h2>
+            <div className="w-16 md:w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
-          
-          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-blue-100">
-            <div className="flex items-start gap-6 mb-8">
-              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+          <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl border border-blue-100">
+            <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6 mb-8">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                 <User size={28} className="text-blue-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-slate-800 mb-4">My Journey</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-800 mb-2 md:mb-4">My Journey</h3>
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base md:text-lg mb-4 md:mb-6">
                   I am a Bachelor of Science in Nursing student at Jomo Kenyatta University of Agriculture 
                   and Technology (JKUAT), currently in my first year, third trimester. My academic interests 
                   focus on pediatric nursing, surgical pathology, and clinical research.
                 </p>
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base md:text-lg mb-2 md:mb-6">
                   I am driven by a desire to make healthcare more accessible, evidence-driven, and patient-centered. 
                   With a growing foundation in clinical practice and health communication, I aim to contribute to 
                   innovative solutions in Kenya's healthcare system through research and community engagement.
                 </p>
               </div>
             </div>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-blue-50 rounded-2xl">
-                <Heart size={32} className="text-blue-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-slate-800 mb-2">Pediatric Focus</h4>
-                <p className="text-sm text-slate-600">Specialized interest in pediatric nursing care</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              <div className="text-center p-4 md:p-6 bg-blue-50 rounded-2xl">
+                <Heart size={28} className="text-blue-600 mx-auto mb-2 md:mb-3 md:text-3xl" />
+                <h4 className="font-semibold text-slate-800 mb-1 md:mb-2 text-base md:text-lg">Pediatric Focus</h4>
+                <p className="text-xs md:text-sm text-slate-600">Specialized interest in pediatric nursing care</p>
               </div>
-              <div className="text-center p-6 bg-indigo-50 rounded-2xl">
-                <Activity size={32} className="text-indigo-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-slate-800 mb-2">Surgical Pathology</h4>
-                <p className="text-sm text-slate-600">Understanding disease processes and treatments</p>
+              <div className="text-center p-4 md:p-6 bg-indigo-50 rounded-2xl">
+                <Activity size={28} className="text-indigo-600 mx-auto mb-2 md:mb-3 md:text-3xl" />
+                <h4 className="font-semibold text-slate-800 mb-1 md:mb-2 text-base md:text-lg">Surgical Pathology</h4>
+                <p className="text-xs md:text-sm text-slate-600">Understanding disease processes and treatments</p>
               </div>
-              <div className="text-center p-6 bg-teal-50 rounded-2xl">
-                <BookOpen size={32} className="text-teal-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-slate-800 mb-2">Clinical Research</h4>
-                <p className="text-sm text-slate-600">Evidence-based healthcare solutions</p>
+              <div className="text-center p-4 md:p-6 bg-teal-50 rounded-2xl">
+                <BookOpen size={28} className="text-teal-600 mx-auto mb-2 md:mb-3 md:text-3xl" />
+                <h4 className="font-semibold text-slate-800 mb-1 md:mb-2 text-base md:text-lg">Clinical Research</h4>
+                <p className="text-xs md:text-sm text-slate-600">Evidence-based healthcare solutions</p>
               </div>
             </div>
           </div>
@@ -267,41 +265,39 @@ function App() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 px-6 bg-white/50" data-aos="fade-left">
+      <section id="education" className="py-16 px-3 sm:px-4 md:px-6 bg-white/50" data-aos="fade-left">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16" data-aos="fade-in">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Education</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">Education</h2>
+            <div className="w-16 md:w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
-          
-          <div className="space-y-8">
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-blue-100 transform hover:-translate-y-2 transition-all duration-200">
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+          <div className="space-y-6 md:space-y-8">
+            <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-blue-100 transform hover:-translate-y-2 transition-all duration-200">
+              <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                   <GraduationCap size={28} className="text-blue-600" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-xl font-semibold text-slate-800">Bachelor of Science in Nursing</h3>
-                    <span className="text-blue-600 font-medium text-sm bg-blue-50 px-3 py-1 rounded-full mt-2 md:mt-0">2024 - Present</span>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 md:mb-4">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800">Bachelor of Science in Nursing</h3>
+                    <span className="text-blue-600 font-medium text-xs sm:text-sm bg-blue-50 px-2 sm:px-3 py-1 rounded-full mt-2 md:mt-0">2024 - Present</span>
                   </div>
-                  <p className="text-slate-600 mb-2">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p>
-                  <p className="text-sm text-slate-500">Currently in First Year, Third Trimester</p>
+                  <p className="text-slate-600 mb-1 md:mb-2 text-xs sm:text-sm md:text-base">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p>
+                  <p className="text-xs sm:text-sm md:text-base text-slate-500">Currently in First Year, Third Trimester</p>
                 </div>
               </div>
             </div>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-blue-100 transform hover:-translate-y-2 transition-all duration-200">
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-blue-100 transform hover:-translate-y-2 transition-all duration-200">
+              <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                   <Award size={28} className="text-green-600" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-xl font-semibold text-slate-800">Kenya Certificate of Secondary Education (KCSE)</h3>
-                    <span className="text-green-600 font-medium text-sm bg-green-50 px-3 py-1 rounded-full mt-2 md:mt-0">2020 - 2023</span>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 md:mb-4">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800">Kenya Certificate of Secondary Education (KCSE)</h3>
+                    <span className="text-green-600 font-medium text-xs sm:text-sm bg-green-50 px-2 sm:px-3 py-1 rounded-full mt-2 md:mt-0">2020 - 2023</span>
                   </div>
-                  <p className="text-slate-600">St. Peter's Mumias Boys High School</p>
+                  <p className="text-slate-600 text-xs sm:text-sm md:text-base">St. Peter's Mumias Boys High School</p>
                 </div>
               </div>
             </div>
@@ -351,21 +347,20 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-6 bg-white/50" data-aos="fade-right">
+      <section id="experience" className="py-16 px-3 sm:px-4 md:px-6 bg-white/50" data-aos="fade-right">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16" data-aos="fade-in">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Practical Experience</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">Practical Experience</h2>
+            <div className="w-16 md:w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
-          
-          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-blue-100">
-            <div className="flex items-start gap-6 mb-6">
-              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+          <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl border border-blue-100">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 mb-6 text-center md:text-left">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                 <Heart size={28} className="text-green-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-slate-800 mb-2">Medical Outreach Camp</h3>
-                <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-800 mb-1 md:mb-2">Medical Outreach Camp</h3>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-slate-500 mb-2 md:mb-4">
                   <div className="flex items-center gap-1">
                     <Calendar size={16} />
                     <span>October 31, 2024</span>
@@ -377,19 +372,18 @@ function App() {
                 </div>
               </div>
             </div>
-            
-            <div className="ml-0 md:ml-22 space-y-4">
-              <div className="flex items-start gap-3">
+            <div className="ml-0 md:ml-22 space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
+              <div className="flex items-start gap-2 md:gap-3 max-w-xl">
                 <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                <p className="text-slate-600">Provided vital signs assessments to community members during a public health awareness event</p>
+                <p className="text-slate-600 text-sm sm:text-base md:text-lg">Provided vital signs assessments to community members during a public health awareness event</p>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 md:gap-3 max-w-xl">
                 <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                <p className="text-slate-600">Led sessions on reproductive health education, emphasizing preventive care</p>
+                <p className="text-slate-600 text-sm sm:text-base md:text-lg">Led sessions on reproductive health education, emphasizing preventive care</p>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 md:gap-3 max-w-xl">
                 <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                <p className="text-slate-600">Supported clinical team in triage, education, and health record collection</p>
+                <p className="text-slate-600 text-sm sm:text-base md:text-lg">Supported clinical team in triage, education, and health record collection</p>
               </div>
             </div>
           </div>
@@ -397,28 +391,27 @@ function App() {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 px-6" data-aos="fade-left">
+      <section id="research" className="py-16 px-3 sm:px-4 md:px-6" data-aos="fade-left">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16" data-aos="fade-in">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Research Interest</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">Research Interest</h2>
+            <div className="w-16 md:w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
-          
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-10 shadow-xl border border-blue-100">
-            <div className="flex items-start gap-6 mb-6">
-              <div className="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl border border-blue-100">
+            <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6 mb-6">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                 <BookOpen size={28} className="text-indigo-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-slate-800 mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-800 mb-2 md:mb-4">
                   Impacts of Antiretroviral Drugs and NSAIDs on Cardiovascular Function
                 </h3>
-                <div className="bg-white/60 rounded-2xl p-6">
-                  <p className="text-slate-600 leading-relaxed mb-4">
+                <div className="bg-white/60 rounded-2xl p-4 sm:p-6">
+                  <p className="text-slate-600 leading-relaxed text-sm sm:text-base md:text-lg mb-2 md:mb-4">
                     This ongoing research explores the relationship between specific antiretroviral drugs (ARVs) 
                     and the onset of peripheral edema and cardiac complications in hypertensive patients.
                   </p>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm sm:text-base md:text-lg">
                     The study highlights potential risks such as right ventricular hypertrophy and seeks to 
                     promote better pharmacovigilance and patient monitoring protocols.
                   </p>
@@ -430,68 +423,66 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-slate-800" data-aos="fade-up">
+      <section id="contact" className="py-16 px-3 sm:px-4 md:px-6 bg-slate-800" data-aos="fade-up">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16" data-aos="fade-in">
-            <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
-            <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Get In Touch</h2>
+            <div className="w-16 md:w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 border border-white/20 flex-1 text-center md:text-left flex flex-col items-center md:items-start">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6">Contact Information</h3>
+              <div className="space-y-4 w-full">
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full justify-center md:justify-start">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <Phone size={20} className="text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">Phone</p>
-                    <p className="text-slate-300">0115 288 203</p>
+                    <p className="text-white font-medium text-sm sm:text-base">Phone</p>
+                    <p className="text-slate-300 text-xs sm:text-sm">0115 288 203</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full justify-center md:justify-start">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <Mail size={20} className="text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">Email</p>
-                    <p className="text-slate-300">rollinsace11534@gmail.com</p>
+                    <p className="text-white font-medium text-sm sm:text-base">Email</p>
+                    <p className="text-slate-300 text-xs sm:text-sm">rollinsace11534@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full justify-center md:justify-start">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <MapPin size={20} className="text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">Location</p>
-                    <p className="text-slate-300">Juja, Kiambu County</p>
+                    <p className="text-white font-medium text-sm sm:text-base">Location</p>
+                    <p className="text-slate-300 text-xs sm:text-sm">Juja, Kiambu County</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full justify-center md:justify-start">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <Linkedin size={20} className="text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">LinkedIn</p>
-                    <p className="text-slate-300">Alianda Rollins</p>
+                    <p className="text-white font-medium text-sm sm:text-base">LinkedIn</p>
+                    <p className="text-slate-300 text-xs sm:text-sm">Alianda Rollins</p>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-              <h3 className="text-2xl font-semibold text-white mb-6">Professional References</h3>
-              <div className="space-y-6">
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <h4 className="text-white font-semibold mb-2">Alianda Kelvin</h4>
-                  <p className="text-slate-300 text-sm mb-2">Clinical Mentor</p>
-                  <p className="text-slate-300 text-sm">0741 080 177</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 border border-white/20 flex-1 text-center md:text-left flex flex-col items-center md:items-start">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6">Professional References</h3>
+              <div className="space-y-4 w-full">
+                <div className="bg-white/10 rounded-2xl p-4 sm:p-6">
+                  <h4 className="text-white font-semibold mb-1 sm:mb-2 text-base sm:text-lg">Alianda Kelvin</h4>
+                  <p className="text-slate-300 text-xs sm:text-sm mb-1 sm:mb-2">Clinical Mentor</p>
+                  <p className="text-slate-300 text-xs sm:text-sm">0741 080 177</p>
                 </div>
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <h4 className="text-white font-semibold mb-2">Rosina Mumo</h4>
-                  <p className="text-slate-300 text-sm mb-2">Registered Nurse</p>
-                  <p className="text-slate-300 text-sm">0707 095 355</p>
+                <div className="bg-white/10 rounded-2xl p-4 sm:p-6">
+                  <h4 className="text-white font-semibold mb-1 sm:mb-2 text-base sm:text-lg">Rosina Mumo</h4>
+                  <p className="text-slate-300 text-xs sm:text-sm mb-1 sm:mb-2">Registered Nurse</p>
+                  <p className="text-slate-300 text-xs sm:text-sm">0707 095 355</p>
                 </div>
               </div>
             </div>
