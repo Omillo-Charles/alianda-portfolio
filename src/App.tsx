@@ -16,6 +16,10 @@ import {
   ChevronDown,
   ExternalLink
 } from 'lucide-react';
+import Footer from './Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,6 +28,11 @@ function App() {
 
   useEffect(() => {
     setIsVisible(true);
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: 'ease-in-out',
+    });
     
     const handleScroll = () => {
       const sections = ['hero', 'about', 'education', 'skills', 'experience', 'research', 'contact'];
@@ -130,13 +139,31 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20" data-aos="fade-up">
         <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 mx-auto mb-8 flex items-center justify-center text-white shadow-2xl">
-            <Stethoscope size={48} />
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 40 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -18, 0, -8, 0] }}
+            transition={{
+              duration: 1.6,
+              delay: 0.2,
+              type: 'spring',
+              bounce: 0.5,
+              repeat: Infinity,
+              repeatType: 'loop',
+              repeatDelay: 0.6
+            }}
+            whileHover={{ scale: 1.07, boxShadow: '0 8px 40px 0 rgba(59,130,246,0.35), 0 2px 8px 0 rgba(67,56,202,0.18)' }}
+            className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 mx-auto mb-8 flex items-center justify-center text-white shadow-[0_8px_40px_0_rgba(59,130,246,0.25)] overflow-hidden"
+          >
+            <img
+              src="/alianda.jpeg"
+              alt="Alianda Rollins"
+              className="w-full h-full object-cover object-top"
+            />
+          </motion.div>
           
           <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-4 leading-tight">
             Alianda Rollins <span className="text-blue-600">Maloba</span>
@@ -168,19 +195,32 @@ function App() {
             </div>
           </div>
           
-          <button 
-            onClick={() => scrollToSection('about')}
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
-            Learn More <ChevronDown size={20} />
-          </button>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-0 md:justify-center md:items-center">
+            <motion.button
+              whileHover={{ scale: 1.08, boxShadow: '0 8px 24px 0 rgba(37, 99, 235, 0.25)' }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => scrollToSection('about')}
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full md:w-auto mb-2 md:mb-0 md:mr-4"
+            >
+              Learn More <ChevronDown size={20} />
+            </motion.button>
+            <motion.a
+              whileHover={{ scale: 1.08, boxShadow: '0 8px 24px 0 rgba(67, 56, 202, 0.25)' }}
+              whileTap={{ scale: 0.97 }}
+              href="/PERSONAL INFORMATION.docx"
+              download
+              className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full md:w-auto"
+            >
+              Download CV <ExternalLink size={20} />
+            </motion.a>
+          </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6">
+      <section id="about" className="py-20 px-6" data-aos="fade-right">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-in">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">About Me</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
@@ -227,9 +267,9 @@ function App() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 px-6 bg-white/50">
+      <section id="education" className="py-20 px-6 bg-white/50" data-aos="fade-left">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-in">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Education</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
@@ -270,9 +310,9 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6">
+      <section id="skills" className="py-20 px-6" data-aos="fade-up">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-in">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Core Skills</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
@@ -311,9 +351,9 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-6 bg-white/50">
+      <section id="experience" className="py-20 px-6 bg-white/50" data-aos="fade-right">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-in">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Practical Experience</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
@@ -357,9 +397,9 @@ function App() {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 px-6">
+      <section id="research" className="py-20 px-6" data-aos="fade-left">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-in">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Research Interest</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
@@ -390,9 +430,9 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-slate-800">
+      <section id="contact" className="py-20 px-6 bg-slate-800" data-aos="fade-up">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-in">
             <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
             <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
           </div>
@@ -456,14 +496,10 @@ function App() {
               </div>
             </div>
           </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-slate-400">
-              © 2024 Alianda Rollins Maloba. Dedicated to advancing healthcare through compassionate nursing and evidence-based research.
-            </p>
-          </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
