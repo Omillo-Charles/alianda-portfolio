@@ -80,7 +80,7 @@ function App() {
               </div>
               <div className="font-bold text-xl text-blue-900">Alianda Rollins</div>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-8 items-center">
               {['hero', 'about', 'education', 'skills', 'experience', 'research', 'contact'].map((section) => (
                 <button
                   key={section}
@@ -95,11 +95,11 @@ function App() {
                 </button>
               ))}
             </div>
-            
-            {/* Mobile Menu Button */}
+            {/* Hamburger Menu Button for Mobile */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+              aria-label="Toggle menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center space-y-1">
                 <div className={`w-full h-0.5 bg-slate-600 transition-all duration-300 ${
@@ -145,16 +145,8 @@ function App() {
         }`}>
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -18, 0, -8, 0] }}
-            transition={{
-              duration: 1.6,
-              delay: 0.2,
-              type: 'spring',
-              bounce: 0.5,
-              repeat: Infinity,
-              repeatType: 'loop',
-              repeatDelay: 0.6
-            }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
             whileHover={{ scale: 1.07, boxShadow: '0 8px 40px 0 rgba(59,130,246,0.35), 0 2px 8px 0 rgba(67,56,202,0.18)' }}
             className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 mx-auto mb-8 flex items-center justify-center text-white shadow-[0_8px_40px_0_rgba(59,130,246,0.25)] overflow-hidden"
           >
