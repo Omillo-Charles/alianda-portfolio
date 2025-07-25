@@ -26,7 +26,7 @@ Alianda is an aspiring nurse with a passion for **pediatric care**, **surgical p
 
 This project was built using:
 
-- HTML5 & Tailwind CSS *(or React/Next.js if applicable)*
+- ReactJS & Tailwind CSS 
 - Fully responsive design
 - SEO optimized for visibility
 
