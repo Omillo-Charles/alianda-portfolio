@@ -298,31 +298,30 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6" data-aos="fade-up">
+      <section id="skills" className="py-16 px-3 sm:px-4 md:px-6" data-aos="fade-up">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16" data-aos="fade-in">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Core Skills</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">Core Skills</h2>
+            <div className="w-16 md:w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
-          
-          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-blue-100">
-            <div className="grid gap-8">
+          <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl border border-blue-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
               {skills.map((skill, index) => {
                 const IconComponent = skill.icon;
                 return (
-                  <div key={index} className="group">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-200">
+                  <div key={index} className="group flex flex-col items-center md:items-start">
+                    <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-3 w-full">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-200">
                         <IconComponent size={20} className="text-blue-600" />
                       </div>
                       <div className="flex-1">
-                        <div className="flex justify-between items-center">
-                          <h4 className="font-semibold text-slate-800">{skill.name}</h4>
-                          <span className="text-sm text-slate-500">{skill.level}%</span>
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+                          <h4 className="font-semibold text-slate-800 text-sm sm:text-base md:text-lg text-center md:text-left">{skill.name}</h4>
+                          <span className="text-xs sm:text-sm text-slate-500 md:ml-2">{skill.level}%</span>
                         </div>
                       </div>
                     </div>
-                    <div className="ml-16">
+                    <div className="w-full md:ml-12">
                       <div className="w-full bg-slate-200 rounded-full h-2">
                         <div 
                           className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
